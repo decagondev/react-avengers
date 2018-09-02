@@ -86,3 +86,5 @@ const avengers = [
   { id: 84, name: "Starhawk" },
   { id: 85, name: "Hawkeye" }
 ];
+
+export default avengers;
