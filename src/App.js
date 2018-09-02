@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import avengers from './AvengersData.js';
+import React, { Component } from "react";
+import logo from "./logo.png";
+import "./App.css";
+import avengers from "./AvengersData.js";
 
 class App extends Component {
   constructor() {
@@ -9,8 +9,9 @@ class App extends Component {
     this.state = {
       avengers: avengers,
       myname: "Tom Tarpey"
-    }
+    };
   }
+
   render() {
     return (
       <div className="App">
@@ -18,12 +19,15 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Avengers: by {this.state.myname}</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {this.state.avengers.map(avenger => {
+          return (
+            <p className="App-intro" key={avenger.id}>
+              {avenger.name}
+            </p>
+          );
+        })}
       </div>
     );
   }
 }
-
 export default App;
